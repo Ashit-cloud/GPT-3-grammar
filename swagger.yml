@@ -1,0 +1,36 @@
+swagger: "2.0"
+info:
+  description: Grammar API
+  version: "1.0.0"
+  title: Grammar API Prototype
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /grammar:
+    get:
+      operationId: grammar.check_grammar
+      tags:
+        - Grammar
+      summary: Get a grammar correction using GPT-3
+      description: Get a grammar correction using GPT-3
+      parameters:
+        - name: text
+          in: query
+          type: string
+          description: Text to be processed
+          required: true
+        - name: length
+          in: query
+          type: integer
+          description: Number of tokens as output
+          required: false
+      responses:
+        200:
+          description: Successfully corrected grammar of given input text
+          schema:
+            type: string

@@ -1,0 +1,5 @@
+connexion
+connexion[swagger-ui]
+flask
+openai
+swagger-ui
